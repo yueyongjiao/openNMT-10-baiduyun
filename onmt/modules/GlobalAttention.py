@@ -165,7 +165,7 @@ class GlobalAttention(nn.Module):
             memory_bank = memory_bank * self.linear_cover(cover).view_as(memory_bank)
             memory_bank = self.tanh(memory_bank)
             '''
-            cover_score = torch.exp(-10 * coverage)
+            cover_score = torch.exp(-1 * coverage)
             cover_score = cover_score.unsqueeze(2).expand(-1, -1, dim)
             memory_bank = memory_bank * cover_score
             
